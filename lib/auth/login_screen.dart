@@ -10,12 +10,20 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
+    return Scaffold(
+        body: SingleChildScrollView(
+      child: Center(
         child: Column(
-          children: [],
+          children: [
+            const SizedBox(height: 100,),
+            Image.asset(
+              'assets/images/tiktok.png',
+              width: 200,
+            ),
+            const Text('Welcome'),
+          ],
         ),
-      )
-    );
+      ),
+    ));
   }
 }
