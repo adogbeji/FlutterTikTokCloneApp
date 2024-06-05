@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:tiktok_clone/widgets/input_text_widget.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -10,6 +12,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // Email & Password Controllers
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +26,12 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 100,
             ),
+
             Image.asset(
               'assets/images/tiktok.png',
               width: 200,
             ),
+
             Text(
               'Welcome',
               style: GoogleFonts.acme(
@@ -40,9 +48,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
+            const SizedBox(height: 30,),
+            
+            // EMAIL INPUT FIELD  
+            InputTextWidget(
+              textEditingController: emailTextEditingController,
+              labelString: 'Email',
+              iconData: Icons.email_outlined,
+              isObscure: false,
+            ),
           ],
         ),
       ),
-    ));
+    ),);
   }
 }
