@@ -85,6 +85,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 54,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  child: InkWell(),
                 ),
               ],
             ): Container(),
