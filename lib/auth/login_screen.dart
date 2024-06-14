@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
+import 'package:get/get.dart';
+import 'package:tiktok_clone/auth/register_screen.dart';
 
 import 'package:tiktok_clone/widgets/input_text_widget.dart';
 
@@ -136,7 +138,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             const SizedBox(height: 15,),
 
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                // Send user to register screen
+                                Get.to(const RegisterScreen());
+                              },
                               child: const Text(
                                 'Sign Up Now',
                                 style: TextStyle(
