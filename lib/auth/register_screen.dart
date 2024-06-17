@@ -39,6 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+
               Text(
                 'Get Started Now!',
                 style: GoogleFonts.acme(
@@ -49,7 +50,41 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
 
               const SizedBox(
+                height: 16,
+              ),
+
+              // PROFILE AVATAR
+              GestureDetector(
+                onTap: () {},
+                child: const CircleAvatar(
+                  radius: 80,
+                  backgroundImage: AssetImage(
+                    'assets/images/profile_avatar.jpg',
+                  ),
+                  backgroundColor: Colors.black,
+                ),
+              ),
+
+              const SizedBox(
                 height: 30,
+              ),
+
+              // USERNAME INPUT FIELD
+              Container(
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: InputTextWidget(
+                  textEditingController: userNameTextEditingController,
+                  labelString: 'Username',
+                  iconData: Icons.person_outline,
+                  isObscure: false,
+                ),
+              ),
+
+              const SizedBox(
+                height: 25,
               ),
 
               // EMAIL INPUT FIELD
