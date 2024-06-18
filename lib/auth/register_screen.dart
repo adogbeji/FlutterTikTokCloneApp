@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:get/get.dart';
 
+import 'package:tiktok_clone/auth/login_screen.dart';
 import 'package:tiktok_clone/widgets/input_text_widget.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -144,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                             child: const Center(
                               child: Text(
-                                'Log In',
+                                'Sign Up',
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.black,
@@ -158,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Text(
-                              'Don\'t have an account?',
+                              'Already have an account?',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Colors.grey,
@@ -169,11 +170,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                             InkWell(
                               onTap: () {
-                                // Send user to register screen
-                                Get.to(const RegisterScreen());
+                                // Send user to login screen
+                                Get.to(const LoginScreen());
                               },
                               child: const Text(
-                                'Sign Up Now',
+                                'Log In Now',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white,
