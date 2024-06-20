@@ -33,5 +33,18 @@ class User {
     "instagram": instagram,
   };
 
-  static User fromSnap(DocumentSnapshot snapshot) {}
+  static User fromSnap(DocumentSnapshot snapshot) {
+    var dataSnapshot = snapshot.data() as Map<String, dynamic>;
+
+    return User(
+      name: dataSnapshot['name'],
+      uid: dataSnapshot['uid'],
+      image: dataSnapshot['image'],
+      email: dataSnapshot['email'],
+      youtube: dataSnapshot['youtube'],
+      facebook: dataSnapshot['facebook'],
+      twitter: dataSnapshot['twitter'],
+      instagram: dataSnapshot['instagram'],
+    );
+  }
 }
