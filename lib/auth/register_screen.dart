@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import 'package:tiktok_clone/auth/login_screen.dart';
 import 'package:tiktok_clone/widgets/input_text_widget.dart';
+import 'package:tiktok_clone/auth/auth_controller.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -20,6 +21,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
   bool showProgressBar = false;
+
+  var authController = AuthController.instanceAuth;  // Stores AuthController class
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +59,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
               // PROFILE AVATAR
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  // Allow user to select image from gallery
+                  authController.chooseImageFromGallery();
+                },
                 child: const CircleAvatar(
                   radius: 80,
                   backgroundImage: AssetImage(
