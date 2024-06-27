@@ -39,4 +39,7 @@ class AuthController extends GetxController {
 
     _pickedFile = Rx<File?>(File(pickedImageFile!.path));
   }
+  
+  // FUNCTION TO CREATE NEW USER ACCOUNT
+  void createAccountForNewUser(File imageFile, String userName, String userEmail, String userPassword) {}
 }
