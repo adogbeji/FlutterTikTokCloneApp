@@ -5,6 +5,7 @@ import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:get/get.dart';
 
 import 'package:tiktok_clone/auth/login_screen.dart';
+import 'package:tiktok_clone/global.dart';
 import 'package:tiktok_clone/widgets/input_text_widget.dart';
 import 'package:tiktok_clone/auth/auth_controller.dart';
 
@@ -20,9 +21,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController userNameTextEditingController = TextEditingController();
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
-  bool showProgressBar = false;
+  // bool showProgressBar = false;
 
-  var authController = AuthController.instanceAuth;  // Stores AuthController class
+  var authController =
+      AuthController.instanceAuth; // Stores AuthController class
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +137,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ? Column(
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width,
+                          width: MediaQuery.of(context).size.width - 38,
                           height: 54,
                           decoration: const BoxDecoration(
                             color: Colors.white,
@@ -145,9 +147,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           child: InkWell(
                             onTap: () {
-                              setState(() {
-                                showProgressBar = true;
-                              });
+                              // setState(() {
+                              //   showProgressBar = true;
+                              // });
+
+                              if (authController.profileImage != null &&
+                                  userNameTextEditingController.text.isNotEmpty &&
+                                  emailTextEditingController.text.isNotEmpty &&
+                                  passwordTextEditingController.text.isNotEmpty) {
+                                setState(() {
+                                  showProgressBar = true;
+                                });
+
+                                // Create account for new user
+                                authController.createAccountForNewUser(
+                                  authController.profileImage!,
+                                  userNameTextEditingController.text,
+                                  emailTextEditingController.text,
+                                  passwordTextEditingController.text,
+                                );
+                              }
                             },
                             child: const Center(
                               child: Text(
@@ -171,9 +190,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 color: Colors.grey,
                               ),
                             ),
-
-                            const SizedBox(height: 15,),
-
+                            const SizedBox(
+                              height: 15,
+                            ),
                             InkWell(
                               onTap: () {
                                 // Send user to login screen
@@ -193,18 +212,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ],
                     )
                   : Container(
-                    child: const SimpleCircularProgressBar(
-                      progressColors: [
-                        Colors.green,
-                        Colors.blueAccent,
-                        Colors.red,
-                        Colors.amber,
-                        Colors.purpleAccent,
-                      ],
-                      animationDuration: 3,
-                      backColor: Colors.white38,
+                      child: const SimpleCircularProgressBar(
+                        progressColors: [
+                          Colors.green,
+                          Colors.blueAccent,
+                          Colors.red,
+                          Colors.amber,
+                          Colors.purpleAccent,
+                        ],
+                        animationDuration: 3,
+                        backColor: Colors.white38,
+                      ),
                     ),
-                  ),
             ],
           ),
         ),

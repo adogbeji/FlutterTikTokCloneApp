@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ? Column(
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width,
+                          width: MediaQuery.of(context).size.width - 38,
                           height: 54,
                           decoration: const BoxDecoration(
                             color: Colors.white,
