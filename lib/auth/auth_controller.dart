@@ -41,5 +41,12 @@ class AuthController extends GetxController {
   }
   
   // FUNCTION TO CREATE NEW USER ACCOUNT
-  void createAccountForNewUser(File imageFile, String userName, String userEmail, String userPassword) {}
+  void createAccountForNewUser(File imageFile, String userName, String userEmail, String userPassword) async {
+    // 1. Create user in Firebase authentication
+    // UserCredential credential
+
+    // 2. Save user profile image to Firebase Storage
+
+    // 3. Save user data to Firestore database
+  }
 }
