@@ -24,11 +24,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 200,
               ),
 
-              Text('Welcome', style: GoogleFonts.acme(
-                fontSize: 34,
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-              ),),
+              Text(
+                'Welcome',
+                style: GoogleFonts.acme(
+                  fontSize: 34,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              Text(
+                'Glad to see you!',
+                style: GoogleFonts.acme(
+                  fontSize: 34,
+                  color: Colors.grey,
+                ),
+              ),
+
+              const SizedBox(height: 30,),
             ],
           ),
         ),
