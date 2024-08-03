@@ -18,6 +18,15 @@ class InputTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return TextField(
+      controller: textEditingController,
+      decoration: InputDecoration(
+        labelText: labelString,
+        prefixIcon: iconData != null ? Icon(iconData): Padding(
+          padding: EdgeInsets.all(8),
+          child: Image.asset(assetReference!, width: 10,),
+        ),
+      ),
+    );
   }
 }
