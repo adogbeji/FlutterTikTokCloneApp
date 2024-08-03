@@ -23,10 +23,26 @@ class InputTextWidget extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelString,
         prefixIcon: iconData != null ? Icon(iconData): Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Image.asset(assetReference!, width: 10,),
         ),
+        labelStyle: const TextStyle(
+          fontSize: 18,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(6),
+          borderSide: const BorderSide(
+            color: Colors.grey,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(6),
+          borderSide: const BorderSide(
+            color: Colors.grey,
+          ),
+        ),
       ),
+      obscureText: isObscure,
     );
   }
 }
