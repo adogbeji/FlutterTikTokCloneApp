@@ -76,6 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
+              SizedBox(height: 12,),
+
               // LOGIN BUTTON
               showProgressBar == false ?
               Column(
@@ -96,9 +98,34 @@ class _LoginScreenState extends State<LoginScreen> {
                         // Log in user
                       },
                       child: const Center(
-                        child: Text('Log in'),
+                        child: Text('Log In', style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),),
                       ),
                     ),
+                  ),
+
+                  const SizedBox(height: 7,),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Don\'t have an account?', style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),),
+
+                      InkWell(
+                        onTap: () {},
+                        child: const Text('Sign up now', style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      ),
+                    ],
                   ),
                 ],
               ): Container(),
