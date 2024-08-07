@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 
 import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
 
@@ -128,7 +129,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ],
-              ): Container(),
+              ): Container(
+                child: const SimpleCircularProgressBar(
+                  progressColors: [
+                    Colors.green,
+                    Colors.blueAccent,
+                    Colors.red,
+                    Colors.amber,
+                    Colors.purpleAccent,
+                  ],
+                  animationDuration: 3,
+                  backColor: Colors.white38,
+                ),
+              ),
             ],
           ),
         ),
