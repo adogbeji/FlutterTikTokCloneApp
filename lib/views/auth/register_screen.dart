@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:get/get.dart';
 
+import 'package:tiktok_clone/views/auth/login_screen.dart';
 import 'package:tiktok_clone/views/auth/register_screen.dart';
 import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
 
@@ -62,6 +63,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
               const SizedBox(height: 30,),
 
+              // USERNAME INPUT FIELD
+              Container(
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: InputTextWidget(
+                  textEditingController: userNameTextEditingController,
+                  labelString: 'Username',
+                  iconData: Icons.person_outline,
+                  isObscure: false,
+                ),
+              ),
+
+              const SizedBox(height: 15,),
+
               // EMAIL INPUT FIELD
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -88,7 +103,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
 
-              SizedBox(height: 12,),
+              const SizedBox(height: 12,),
 
               // LOGIN BUTTON
               showProgressBar == false ?
@@ -110,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         // Log in user
                       },
                       child: const Center(
-                        child: Text('Log In', style: TextStyle(
+                        child: Text('Sign Up', style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.w700,
@@ -124,17 +139,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Don\'t have an account?', style: TextStyle(
+                      const Text('Already have an account?', style: TextStyle(
                         fontSize: 16,
                         color: Colors.grey,
                       ),),
 
                       InkWell(
                         onTap: () {
-                          // Sends user to register screen
-                          Get.to(const RegisterScreen());
+                          // Sends user to login screen
+                          Get.to(const LoginScreen());
                         },
-                        child: const Text('Sign up now', style: TextStyle(
+                        child: const Text('Log In', style: TextStyle(
                           fontSize: 18,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
