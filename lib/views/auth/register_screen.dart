@@ -30,13 +30,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               const SizedBox(height: 100,),
 
-              Image.asset(
-                'assets/images/tiktok.png',
-                width: 200,
-              ),
-
               Text(
-                'Welcome',
+                'Create Account',
                 style: GoogleFonts.acme(
                   fontSize: 34,
                   color: Colors.grey,
@@ -45,10 +40,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
 
               Text(
-                'Glad to see you!',
+                'to get started',
                 style: GoogleFonts.acme(
                   fontSize: 34,
                   color: Colors.grey,
+                ),
+              ),
+
+              const SizedBox(height: 16,),
+
+              GestureDetector(
+                onTap: () {},
+                child: const CircleAvatar(
+                  radius: 80,
+                  backgroundImage: AssetImage(
+                    'assets/images/profile_avatar.jpg',
+                  ),
+                  backgroundColor: Colors.black,
                 ),
               ),
 
