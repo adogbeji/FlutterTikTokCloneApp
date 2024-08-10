@@ -18,4 +18,33 @@ class User {
     this.twitter,
     this.instagram,
   });
+
+  // Map<String, dynamic> toJson() =>
+
+  // {
+  //   'name': name,
+  //   'uid': uid,
+  //   'image': image,
+  //   'email': email,
+  //   'youtube': youtube,
+  //   'facebook': facebook,
+  //   'twitter': twitter,
+  //   'instagram': instagram
+  // }; 
+  
+  // Converts data to JSON format
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'uid': uid,
+      'image': image,
+      'email': email,
+      'youtube': youtube,
+      'facebook': facebook,
+      'twitter': twitter,
+      'instagram': instagram,
+    };
+  }
+
+  // static User fromSnap() {}
 }
