@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class User {
   String? name;
   String? uid;
@@ -45,6 +47,20 @@ class User {
       'instagram': instagram,
     };
   }
+  
+  // Gets user data from database
+  static User fromSnap(DocumentSnapshot snapshot) {  // NB: snapshot refers to the user data that's coming from database
+    var dataSnapshot = snapshot.data() as Map<String, dynamic>;
 
-  // static User fromSnap() {}
+    return User(
+      name: dataSnapshot['name'],
+      uid: dataSnapshot['uid'],
+      image: dataSnapshot['image'],
+      email: dataSnapshot['email'],
+      youtube: dataSnapshot['youtube'],
+      facebook: dataSnapshot['facebook'],
+      twitter: dataSnapshot['twitter'],
+      instagram: dataSnapshot['instagram'],
+    );
+  }
 }
