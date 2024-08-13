@@ -5,6 +5,8 @@ import 'package:image_picker/image_picker.dart';
 
 class AuthController extends GetxController {
 
+  static AuthController instanceAuth = Get.find();  // Stores instance of AuthController class
+
   late Rx<File?> _pickedFile;  // Stores image user picked from phone gallery
   File? get profileImage => _pickedFile.value;
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:get/get.dart';
+import 'package:tiktok_clone/controllers/auth_controller.dart';
 
 import 'package:tiktok_clone/views/auth/login_screen.dart';
 import 'package:tiktok_clone/views/auth/register_screen.dart';
@@ -21,6 +22,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
   bool showProgressBar = false;
+
+  var authController = AuthController.instanceAuth;  // Stores instance of AuthController
 
   @override
   Widget build(BuildContext context) {
