@@ -54,7 +54,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 16,),
 
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  authController.chooseImageFromGallery();
+                },
                 child: const CircleAvatar(
                   radius: 80,
                   backgroundImage: AssetImage(
