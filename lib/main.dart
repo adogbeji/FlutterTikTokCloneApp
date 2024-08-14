@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:tiktok_clone/controllers/auth_controller.dart';
+import 'firebase_options.dart';
+
 import 'package:get/get.dart';
 
 import 'package:tiktok_clone/views/auth/login_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Ensures all Flutter widgets have been successfully initialised
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  )
+  .then((value) {
+    Get.put(AuthController());
+  });
   runApp(const MyApp());
 }
 
