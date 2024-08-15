@@ -127,7 +127,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           showProgressBar = true;
                         });
 
-                        // Log in user
+                        // Create new user account
+                        authController.createAccountForNewUser(
+                          authController.profileImage!, 
+                          userNameTextEditingController.text, 
+                          emailTextEditingController.text,
+                          passwordTextEditingController.text,
+                        );
                       },
                       child: const Center(
                         child: Text('Sign Up', style: TextStyle(
