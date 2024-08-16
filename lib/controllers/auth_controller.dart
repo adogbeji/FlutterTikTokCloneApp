@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -42,5 +43,16 @@ class AuthController extends GetxController {
   }
   
   // Creates new user account
-  void createAccountForNewUser(File imageFile, String userName, String userEmail, String userPassword) {}
+  void createAccountForNewUser(File imageFile, String userName, String userEmail, String userPassword) async {
+    // 1) Create new user in Firebase authentication
+    UserCredential credential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+          email: userEmail, 
+          password: userPassword
+        );  // Creates user account using email & password
+
+    // 2) Save user profile image to Firebase storage
+
+    // 3)  Save user data to Firestore database
+  }
 }
