@@ -123,17 +123,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     child: InkWell(
                       onTap: () {
-                        setState(() {
-                          showProgressBar = true;
-                        });
+                        // setState(() {
+                        //   showProgressBar = true;
+                        // });
 
-                        // Create new user account
-                        authController.createAccountForNewUser(
-                          authController.profileImage!, 
-                          userNameTextEditingController.text, 
-                          emailTextEditingController.text,
-                          passwordTextEditingController.text,
-                        );
+                        if (authController.profileImage != null 
+                              && userNameTextEditingController.text.isNotEmpty
+                              && emailTextEditingController.text.isNotEmpty
+                              && passwordTextEditingController.text.isNotEmpty
+                           ) {
+                            setState(() {
+                              showProgressBar = true;
+                            });
+
+                            // Create new user account
+                            authController.createAccountForNewUser(
+                                authController.profileImage!, 
+                                userNameTextEditingController.text, 
+                                emailTextEditingController.text,
+                                passwordTextEditingController.text,
+                              );
+                            }
+
+                        // // Create new user account
+                        // authController.createAccountForNewUser(
+                        //   authController.profileImage!, 
+                        //   userNameTextEditingController.text, 
+                        //   emailTextEditingController.text,
+                        //   passwordTextEditingController.text,
+                        // );
                       },
                       child: const Center(
                         child: Text('Sign Up', style: TextStyle(
