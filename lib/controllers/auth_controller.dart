@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -52,7 +53,23 @@ class AuthController extends GetxController {
         );  // Creates user account using email & password
 
     // 2) Save user profile image to Firebase storage
+    String imageDownloadURL = await uploadImageToStorage(imageFile);
 
     // 3)  Save user data to Firestore database
+  }
+
+  // Uploads profile picture to Firebase Storage
+  Future<String> uploadImageToStorage(File imageFile) async {
+    Reference reference = FirebaseStorage.instance
+        .ref()
+        .child('Profile Images')
+        .child(FirebaseAuth.instance.currentUser!.uid);  // Stores user uid for image
+    
+    UploadTask uploadTask = reference.putFile(imageFile);  // Stores uploaded image
+    TaskSnapshot taskSnapshot = await uploadTask;  // Stores result of uploading image
+
+    String downloadURL = await taskSnapshot.ref.getDownloadURL();  // Stores image download URL
+
+    return downloadURL;
   }
 }
