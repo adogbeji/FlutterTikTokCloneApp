@@ -1,9 +1,12 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+
+import 'package:tiktok_clone/models/user.dart' as userModel;
 
 class AuthController extends GetxController {
 
@@ -56,6 +59,14 @@ class AuthController extends GetxController {
     String imageDownloadURL = await uploadImageToStorage(imageFile);
 
     // 3)  Save user data to Firestore database
+    userModel.User user = userModel.User(
+      name: userName,
+      email: userEmail,
+      image:imageDownloadURL,
+      uid: credential.user!.uid,
+    );
+
+    await FirebaseFirestore.instance.collection('users').doc(credential.user!.uid).set({});
   }
 
   // Uploads profile picture to Firebase Storage
