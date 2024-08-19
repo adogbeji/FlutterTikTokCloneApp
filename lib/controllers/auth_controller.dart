@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:tiktok_clone/models/user.dart' as userModel;
+import 'package:tiktok_clone/models/utils/global.dart';
+import 'package:tiktok_clone/views/auth/login_screen.dart';
 
 class AuthController extends GetxController {
 
@@ -48,25 +50,38 @@ class AuthController extends GetxController {
   
   // Creates new user account
   void createAccountForNewUser(File imageFile, String userName, String userEmail, String userPassword) async {
-    // 1) Create new user in Firebase authentication
-    UserCredential credential = await FirebaseAuth.instance
+    try {
+      // 1) Create new user in Firebase authentication
+      UserCredential credential = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(
           email: userEmail, 
           password: userPassword
         );  // Creates user account using email & password
 
-    // 2) Save user profile image to Firebase storage
-    String imageDownloadURL = await uploadImageToStorage(imageFile);
+      // 2) Save user profile image to Firebase storage
+      String imageDownloadURL = await uploadImageToStorage(imageFile);
 
-    // 3)  Save user data to Firestore database
-    userModel.User user = userModel.User(
-      name: userName,
-      email: userEmail,
-      image:imageDownloadURL,
-      uid: credential.user!.uid,
-    );
+      // 3)  Save user data to Firestore database
+      userModel.User user = userModel.User(
+        name: userName,
+        email: userEmail,
+        image:imageDownloadURL,
+        uid: credential.user!.uid,
+      );
 
-    await FirebaseFirestore.instance.collection('users').doc(credential.user!.uid).set({});
+      await FirebaseFirestore.instance
+        .collection('users')
+        .doc(credential.user!.uid)
+        .set(user.toJson());
+    } catch (e) {
+      Get.snackbar(
+        'Account Creation Failed',
+        'Error Occurred. Try Again!'
+      );
+      
+      showProgressBar = false;
+      Get.to(const LoginScreen());
+    }
   }
 
   // Uploads profile picture to Firebase Storage
