@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tiktok_clone/models/user.dart' as userModel;
 import 'package:tiktok_clone/models/utils/global.dart';
 import 'package:tiktok_clone/views/auth/login_screen.dart';
+import 'package:tiktok_clone/views/auth/register_screen.dart';
 
 class AuthController extends GetxController {
 
@@ -100,5 +101,28 @@ class AuthController extends GetxController {
   }
 
   // Logs in users
-  void loginUserNow(String userEmail, String userPassword) async {}
+  void loginUserNow(String userEmail, String userPassword) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: userEmail, 
+        password: userPassword,
+      );  // Logs in user withemail and password
+
+      Get.snackbar(
+        'Login Successful',
+        'Welcome to the app!'
+      );
+      
+      showProgressBar = false;
+      Get.to(const RegisterScreen());
+    } catch (e) {
+      Get.snackbar(
+        'Login Failed',
+        'Error Occurred. Try Again!'
+      );
+      
+      showProgressBar = false;
+      Get.to(const RegisterScreen());
+    }
+  }
 }
