@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import 'package:tiktok_clone/views/auth/register_screen.dart';
 import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
+import 'package:tiktok_clone/controllers/auth_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,6 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
   bool showProgressBar = false;
+
+  var authController = AuthController.instanceAuth;  // Stores instance of AuthController
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
-              SizedBox(height: 12,),
+              const SizedBox(height: 12,),
 
               // LOGIN BUTTON
               showProgressBar == false ?
@@ -94,11 +97,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: InkWell(
                       onTap: () {
-                        setState(() {
-                          showProgressBar = true;
-                        });
-
                         // Log in user
+                        if (emailTextEditingController.text.isNotEmpty 
+                            && passwordTextEditingController.text.isNotEmpty
+                          ) {
+                            setState(() {
+                              showProgressBar = true;
+                            });
+
+                            authController.loginUserNow(
+                              emailTextEditingController.text,
+                              passwordTextEditingController.text,
+                            );
+                          }
                       },
                       child: const Center(
                         child: Text('Log In', style: TextStyle(

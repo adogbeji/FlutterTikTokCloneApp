@@ -98,4 +98,7 @@ class AuthController extends GetxController {
 
     return downloadURL;
   }
+
+  // Logs in users
+  void loginUserNow(String userEmail, String userPassword) async {}
 }
