@@ -6,7 +6,7 @@ import 'firebase_options.dart';
 
 import 'package:get/get.dart';
 
-import 'package:tiktok_clone/views/auth/login_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensures all Flutter widgets have been successfully initialised

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:get/get.dart';
 
-import 'package:tiktok_clone/views/auth/register_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/register_screen.dart';
 import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
 import 'package:tiktok_clone/controllers/auth_controller.dart';
 

@@ -8,8 +8,8 @@ import 'package:image_picker/image_picker.dart';
 
 import 'package:tiktok_clone/models/user.dart' as userModel;
 import 'package:tiktok_clone/models/utils/global.dart';
-import 'package:tiktok_clone/views/auth/login_screen.dart';
-import 'package:tiktok_clone/views/auth/register_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/register_screen.dart';
 
 class AuthController extends GetxController {
 

@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 import 'package:tiktok_clone/controllers/auth_controller.dart';
 import 'package:tiktok_clone/models/utils/global.dart';
 
-import 'package:tiktok_clone/views/auth/login_screen.dart';
-import 'package:tiktok_clone/views/auth/register_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
+import 'package:tiktok_clone/views/screens/auth/register_screen.dart';
 import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
 
 class RegisterScreen extends StatefulWidget {
