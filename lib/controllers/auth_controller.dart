@@ -10,6 +10,7 @@ import 'package:tiktok_clone/models/user.dart' as userModel;
 import 'package:tiktok_clone/models/utils/global.dart';
 import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
 import 'package:tiktok_clone/views/screens/auth/register_screen.dart';
+import 'package:tiktok_clone/views/screens/home/home_screen.dart';
 
 class AuthController extends GetxController {
 
@@ -124,5 +125,21 @@ class AuthController extends GetxController {
       showProgressBar = false;
       Get.to(const RegisterScreen());
     }
+  }
+
+  // Sends users to home screen dashboard if they're logged in
+  goToScreen(User? currentUser) {
+    // If user is not logged in
+    if (currentUser == null) {
+      Get.offAll(const LoginScreen());
+    } else {
+      Get.offAll(const HomeScreen());
+    }
+  }
+
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
   }
 }
