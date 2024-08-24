@@ -145,5 +145,6 @@ class AuthController extends GetxController {
 
     _currentUser = Rx<User?>(FirebaseAuth.instance.currentUser);  // Current user state
     _currentUser.bindStream(FirebaseAuth.instance.authStateChanges());  // Handles curent user state
+    ever(_currentUser, goToScreen);
   }
 }
