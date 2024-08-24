@@ -143,6 +143,7 @@ class AuthController extends GetxController {
     // TODO: implement onReady
     super.onReady();
 
-    Rx<User?>(FirebaseAuth.instance.currentUser);  // Current user state
+    _currentUser = Rx<User?>(FirebaseAuth.instance.currentUser);  // Current user state
+    _currentUser.bindStream(FirebaseAuth.instance.authStateChanges());  // Handles curent user state
   }
 }
