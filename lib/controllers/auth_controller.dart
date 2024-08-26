@@ -83,7 +83,7 @@ class AuthController extends GetxController {
       );
       
       showProgressBar = false;
-      Get.to(const LoginScreen());
+      // Get.to(const LoginScreen());
     }
   }
 
