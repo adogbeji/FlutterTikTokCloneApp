@@ -116,7 +116,7 @@ class AuthController extends GetxController {
       );
       
       showProgressBar = false;
-      Get.to(const RegisterScreen());
+      // Get.to(const RegisterScreen());
     } catch (e) {
       Get.snackbar(
         'Login Failed',
