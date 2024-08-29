@@ -19,6 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
             screenIndex = index;
           });
         },
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.black,
+        selectedItemColor: Colors.white,
       ),
     );
   }
