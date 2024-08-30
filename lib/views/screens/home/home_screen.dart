@@ -22,6 +22,14 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.black,
         selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white12,
+        currentIndex: screenIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home, size: 30,),
+            label: 'Home'
+          ),
+        ],
       ),
     );
   }
