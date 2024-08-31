@@ -29,6 +29,26 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.home, size: 30,),
             label: 'Home'
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 30,),
+            label: 'Discover'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home, size: 30,),
+            label: 'Upload Video'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.inbox_sharp, size: 30,),
+            label: 'Following'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person, size: 30,),
+            label: 'Me'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home, size: 30,),
+            label: 'Home'
+          ),
         ],
       ),
     );
