@@ -129,22 +129,22 @@ class AuthController extends GetxController {
   }
 
   // Sends users to home screen dashboard if they're logged in
-  goToScreen(User? currentUser) {
-    // If user is not logged in
-    if (currentUser == null) {
-      Get.offAll(const LoginScreen());
-    } else {
-      Get.offAll(const HomeScreen());
-    }
-  }
+  // goToScreen(User? currentUser) {
+  //   // If user is not logged in
+  //   if (currentUser == null) {
+  //     Get.offAll(const LoginScreen());
+  //   } else {
+  //     Get.offAll(const HomeScreen());
+  //   }
+  // }
 
-  @override
-  void onReady() {
-    // TODO: implement onReady
-    super.onReady();
+  // @override
+  // void onReady() {
+  //   // TODO: implement onReady
+  //   super.onReady();
 
-    _currentUser = Rx<User?>(FirebaseAuth.instance.currentUser);  // Current user state
-    _currentUser.bindStream(FirebaseAuth.instance.authStateChanges());  // Handles curent user state
-    ever(_currentUser, goToScreen);
-  }
+  //   _currentUser = Rx<User?>(FirebaseAuth.instance.currentUser);  // Current user state
+  //   _currentUser.bindStream(FirebaseAuth.instance.authStateChanges());  // Handles curent user state
+  //   ever(_currentUser, goToScreen);
+  // }
 }
