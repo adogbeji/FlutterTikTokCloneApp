@@ -60,10 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.person, size: 30,),
             label: 'Me'
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 30,),
-            label: 'Home'
-          ),
         ],
       ),
       body: screenList[screenIndex],
