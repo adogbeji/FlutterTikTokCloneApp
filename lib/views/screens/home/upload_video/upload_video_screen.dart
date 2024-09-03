@@ -16,6 +16,19 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/upload.png', width: 260,),
+
+            const SizedBox(height: 20,),
+
+            ElevatedButton(
+              onPressed: () {}, 
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
+              child: Text('Upload New Video', style: TextStyle(
+              fontSize: 16,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),),),
           ],
         ),
       ),
