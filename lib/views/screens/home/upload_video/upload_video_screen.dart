@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UploadVideoScreen extends StatefulWidget {
   const UploadVideoScreen({super.key});
@@ -15,6 +16,49 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
         children: [
           SimpleDialogOption(
             onPressed: () {},
+            child: const Row(
+              children: [
+                Icon(Icons.image),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text('Get Video From Gallery', style: TextStyle(
+                    fontSize: 20,
+                  ),),
+                ),
+              ],
+            ),
+          ),
+
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Row(
+              children: [
+                Icon(Icons.camera_alt),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text('Capture Video With Camera', style: TextStyle(
+                    fontSize: 20,
+                  ),),
+                ),
+              ],
+            ),
+          ),
+
+          SimpleDialogOption(
+            onPressed: () {
+              Get.back();  // Closes dialog box
+            },
+            child: const Row(
+              children: [
+                Icon(Icons.camera_alt),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text('Cancel', style: TextStyle(
+                    fontSize: 20,
+                  ),),
+                ),
+              ],
+            ),
           ),
         ],
       ),
