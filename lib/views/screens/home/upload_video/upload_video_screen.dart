@@ -21,14 +21,16 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
                 Icon(Icons.image),
                 Padding(
                   padding: EdgeInsets.all(8),
-                  child: Text('Get Video From Gallery', style: TextStyle(
-                    fontSize: 20,
-                  ),),
+                  child: Text(
+                    'Get Video From Gallery',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
-
           SimpleDialogOption(
             onPressed: () {},
             child: const Row(
@@ -36,26 +38,31 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
                 Icon(Icons.camera_alt),
                 Padding(
                   padding: EdgeInsets.all(8),
-                  child: Text('Capture Video With Camera', style: TextStyle(
-                    fontSize: 20,
-                  ),),
+                  child: Text(
+                    'Capture Video With Camera',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
-
           SimpleDialogOption(
             onPressed: () {
-              Get.back();  // Closes dialog box
+              Get.back(); // Closes dialog box
             },
             child: const Row(
               children: [
-                Icon(Icons.camera_alt),
+                Icon(Icons.cancel),
                 Padding(
                   padding: EdgeInsets.all(8),
-                  child: Text('Cancel', style: TextStyle(
-                    fontSize: 20,
-                  ),),
+                  child: Text(
+                    'Cancel',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -72,20 +79,29 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/upload.png', width: 260,),
+            Image.asset(
+              'assets/images/upload.png',
+              width: 260,
+            ),
 
             const SizedBox(height: 20,),
 
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                displayDialogBox();
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
               ),
-              child: Text('Upload New Video', style: TextStyle(
-              fontSize: 16,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),),),
+              child: const Text(
+                'Upload New Video',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),
