@@ -19,12 +19,15 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
             child: const Row(
               children: [
                 Icon(Icons.image),
-                Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Text(
-                    'Get Video From Gallery',
-                    style: TextStyle(
-                      fontSize: 14,
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Text(
+                      'Get Video From Gallery',
+                      maxLines: 3,
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
@@ -36,12 +39,15 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
             child: const Row(
               children: [
                 Icon(Icons.camera_alt),
-                Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Text(
-                    'Capture Video With Camera',
-                    style: TextStyle(
-                      fontSize: 14,
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Text(
+                      'Capture Video With Camera',
+                      maxLines: 3,
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
