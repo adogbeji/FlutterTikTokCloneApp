@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UploadVideoScreen extends StatefulWidget {
   const UploadVideoScreen({super.key});
@@ -9,6 +10,10 @@ class UploadVideoScreen extends StatefulWidget {
 }
 
 class _UploadVideoScreenState extends State<UploadVideoScreen> {
+  getVideoFile(ImageSource source) async {
+    await ImagePicker().pickVideo(source: source);
+  }
+
   displayDialogBox() {
     return showDialog(
       context: context,
