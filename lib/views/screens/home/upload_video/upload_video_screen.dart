@@ -11,7 +11,9 @@ class UploadVideoScreen extends StatefulWidget {
 
 class _UploadVideoScreenState extends State<UploadVideoScreen> {
   getVideoFile(ImageSource source) async {
-    await ImagePicker().pickVideo(source: source);
+    final videoFile = await ImagePicker().pickVideo(source: source);  // Stores video file
+
+    if (videoFile != null) {}
   }
 
   displayDialogBox() {
