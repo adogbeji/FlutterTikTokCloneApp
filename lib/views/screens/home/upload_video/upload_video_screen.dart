@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+
+import 'package:tiktok_clone/views/screens/home/upload_video/upload_form.dart';
 
 class UploadVideoScreen extends StatefulWidget {
   const UploadVideoScreen({super.key});
@@ -13,7 +16,9 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
   getVideoFile(ImageSource source) async {
     final videoFile = await ImagePicker().pickVideo(source: source);  // Stores video file
 
-    if (videoFile != null) {}
+    if (videoFile != null) {
+      Get.to(const UploadForm());
+    }
   }
 
   displayDialogBox() {
