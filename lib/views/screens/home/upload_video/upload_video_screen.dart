@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -17,7 +19,10 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
     final videoFile = await ImagePicker().pickVideo(source: source);  // Stores video file
 
     if (videoFile != null) {
-      Get.to(const UploadForm());
+      Get.to(UploadForm(
+        videoFile: File(videoFile.path),  // File which is available at this path
+        videoPath: videoFile.path,
+      ),);
     }
   }
 
