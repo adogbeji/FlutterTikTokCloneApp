@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class UploadForm extends StatefulWidget {
-  const UploadForm({super.key});
+  const UploadForm({super.key, required this.videoFile, required this.videoPath});
+
+  final File videoFile;
+  final String videoPath;
 
   @override
   State<UploadForm> createState() => _UploadFormState();

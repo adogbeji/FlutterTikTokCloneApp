@@ -19,10 +19,13 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
     final videoFile = await ImagePicker().pickVideo(source: source);  // Stores video file
 
     if (videoFile != null) {
-      Get.to(UploadForm(
-        videoFile: File(videoFile.path),  // File which is available at this path
-        videoPath: videoFile.path,
-      ),);
+      Get.to(
+        UploadForm(
+          videoFile:
+              File(videoFile.path), // File which is available at this path
+          videoPath: videoFile.path,
+        ),
+      );
     }
   }
 
@@ -32,7 +35,9 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
       builder: (context) => SimpleDialog(
         children: [
           SimpleDialogOption(
-            onPressed: () {},
+            onPressed: () {
+              getVideoFile(ImageSource.gallery);
+            },
             child: const Row(
               children: [
                 Icon(Icons.image),
@@ -106,9 +111,9 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
               'assets/images/upload.png',
               width: 260,
             ),
-
-            const SizedBox(height: 20,),
-
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
               onPressed: () {
                 displayDialogBox();
