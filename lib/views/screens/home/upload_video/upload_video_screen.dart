@@ -57,7 +57,9 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
             ),
           ),
           SimpleDialogOption(
-            onPressed: () {},
+            onPressed: () {
+              getVideoFile(ImageSource.camera);
+            },
             child: const Row(
               children: [
                 Icon(Icons.camera_alt),
