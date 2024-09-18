@@ -20,12 +20,24 @@ class _UploadFormState extends State<UploadForm> {
   @override
   void initState() {
     // TODO: implement initState
-
     setState(() {
       playerController = VideoPlayerController.file(widget.videoFile);
     });
 
+    playerController!.initialize();
+    playerController!.play();
+    playerController!.setVolume(2);
+    playerController!.setLooping(true);  // Allows autoplay
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    playerController!.dispose();
+
+    super.dispose();
   }
 
   @override
