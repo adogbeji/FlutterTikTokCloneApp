@@ -43,9 +43,15 @@ class _UploadFormState extends State<UploadForm> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Upload Form'),
-      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+
+            // Display video player
+            SizedBox(),
+          ],
+        ),
+      )
     );
   }
 }
