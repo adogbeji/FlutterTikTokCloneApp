@@ -42,13 +42,17 @@ class _UploadFormState extends State<UploadForm> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
 
             // Display video player
-            SizedBox(),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 1.6,
+              child: VideoPlayer(playerController!),
+            ),
           ],
         ),
       )
