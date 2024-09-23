@@ -53,6 +53,8 @@ class _UploadFormState extends State<UploadForm> {
               height: MediaQuery.of(context).size.height / 1.6,
               child: VideoPlayer(playerController!),
             ),
+
+            SizedBox(height: 30,),
           ],
         ),
       )
