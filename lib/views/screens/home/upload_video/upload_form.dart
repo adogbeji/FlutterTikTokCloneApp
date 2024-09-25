@@ -2,6 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
+
+import 'package:tiktok_clone/models/utils/global.dart';
+import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
+
 import 'package:video_player/video_player.dart';
 
 class UploadForm extends StatefulWidget {
@@ -54,7 +59,47 @@ class _UploadFormState extends State<UploadForm> {
               child: VideoPlayer(playerController!),
             ),
 
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
+
+            showProgressBar == true ? Container(
+              child: const SimpleCircularProgressBar(
+                  progressColors: [
+                    Colors.green,
+                    Colors.blueAccent,
+                    Colors.red,
+                    Colors.amber,
+                    Colors.purpleAccent,
+                  ],
+                  animationDuration: 3,
+                  backColor: Colors.white38,
+                ),
+            ): Column(
+              children: [
+                // ARTIST/SONG
+              Container(
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: InputTextWidget(
+                  textEditingController: emailTextEditingController,
+                  labelString: 'Email',
+                  iconData: Icons.email_outlined,
+                  isObscure: false,
+                ),
+              ),
+
+                // DESCRIPTION TAGS
+              Container(
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: InputTextWidget(
+                  textEditingController: emailTextEditingController,
+                  labelString: 'Email',
+                  iconData: Icons.email_outlined,
+                  isObscure: false,
+                ),
+              ),
+              ],
+            ),
           ],
         ),
       )
