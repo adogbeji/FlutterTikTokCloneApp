@@ -21,6 +21,8 @@ class UploadForm extends StatefulWidget {
 
 class _UploadFormState extends State<UploadForm> {
   VideoPlayerController? playerController;
+  TextEditingController artistSongTextEditingController = TextEditingController();
+  TextEditingController descriptionTagsTextEditingController = TextEditingController();
 
   @override
   void initState() {
@@ -80,8 +82,8 @@ class _UploadFormState extends State<UploadForm> {
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: InputTextWidget(
-                  textEditingController: emailTextEditingController,
-                  labelString: 'Email',
+                  textEditingController: artistSongTextEditingController,
+                  labelString: 'Artist - Song',
                   iconData: Icons.email_outlined,
                   isObscure: false,
                 ),
@@ -92,8 +94,8 @@ class _UploadFormState extends State<UploadForm> {
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: InputTextWidget(
-                  textEditingController: emailTextEditingController,
-                  labelString: 'Email',
+                  textEditingController: descriptionTagsTextEditingController,
+                  labelString: 'Description - Tags',
                   iconData: Icons.email_outlined,
                   isObscure: false,
                 ),
