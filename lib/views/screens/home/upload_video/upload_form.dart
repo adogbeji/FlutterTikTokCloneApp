@@ -53,7 +53,6 @@ class _UploadFormState extends State<UploadForm> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             // Display video player
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -77,28 +76,52 @@ class _UploadFormState extends State<UploadForm> {
                 ),
             ): Column(
               children: [
-                // ARTIST/SONG
+              // ARTIST/SONG
               Container(
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: InputTextWidget(
                   textEditingController: artistSongTextEditingController,
                   labelString: 'Artist - Song',
-                  iconData: Icons.email_outlined,
+                  iconData: Icons.music_video_sharp,
                   isObscure: false,
                 ),
               ),
 
-                // DESCRIPTION TAGS
+              const SizedBox(height: 10,),
+
+              // DESCRIPTION TAGS
               Container(
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: InputTextWidget(
                   textEditingController: descriptionTagsTextEditingController,
                   labelString: 'Description - Tags',
-                  iconData: Icons.email_outlined,
+                  iconData: Icons.slideshow_sharp,
                   isObscure: false,
                 ),
+              ),
+              
+              // UPLOAD BUTTON
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 54,
+                decoration: const BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),  
+                child: InkWell(
+                  onTap: () {},
+                  child: const Center(
+                    child: Text('Upload Now', style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),),
+                  ),
+                ),              
               ),
               ],
             ),
