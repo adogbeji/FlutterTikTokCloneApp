@@ -107,7 +107,7 @@ class _UploadFormState extends State<UploadForm> {
                 width: MediaQuery.of(context).size.width,
                 height: 54,
                 decoration: const BoxDecoration(
-                  color: Colors.white10,
+                  color: Colors.white70,
                   borderRadius: BorderRadius.all(
                     Radius.circular(10),
                   ),
