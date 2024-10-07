@@ -4,6 +4,8 @@ import 'package:video_compress/video_compress.dart';
 class UploadController extends GetxController {
 
   compressVideoFile(String videoFilePath) async {
-    await VideoCompress.compressVideo(videoFilePath, quality: VideoQuality.LowQuality);
+    final compressedVideoFile = await VideoCompress.compressVideo(videoFilePath, quality: VideoQuality.LowQuality);
+
+    return compressedVideoFile!.file;  // Returns compressed video
   }
 }
