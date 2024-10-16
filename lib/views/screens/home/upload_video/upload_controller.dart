@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:video_compress/video_compress.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class UploadController extends GetxController {
 
@@ -7,6 +8,10 @@ class UploadController extends GetxController {
     final compressedVideoFilePath = await VideoCompress.compressVideo(videoFilePath, quality: VideoQuality.LowQuality);  // Stores compressed video file path
 
     return compressedVideoFilePath!.file;  // Returns compressed video
+  }
+
+  uploadCompressedVideo(String videoID, String videoFilePath) async {
+    UploadTask videoUploadTask = FirebaseStorage.instance.ref().child('All Videos').child(videoID);
   }
 
   getThumbnailImage(String videoFilePath) async {
