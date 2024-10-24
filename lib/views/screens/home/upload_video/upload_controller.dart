@@ -45,5 +45,15 @@ class UploadController extends GetxController {
     return downloadURL;
   }
 
-  saveVideoInfo(String artistSongName, String descriptionTags, String videoFilePath, BuildContext context) {}
+  saveVideoInfo(String artistSongName, String descriptionTags, String videoFilePath, BuildContext context) {
+    
+    try {
+      
+    } catch (errorMsg) {
+      Get.snackbar(
+        'Video Upload Unsuccessful', 
+        'You video could not be uploaded due to an error. Try again.'
+      );
+    }
+  }
 }
