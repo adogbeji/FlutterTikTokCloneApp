@@ -51,7 +51,12 @@ class UploadController extends GetxController {
       String videoID = DateTime.now().millisecondsSinceEpoch.toString();
 
       // 1) Upload Video To Firebase Storage
-      await uploadCompressedVideo(videoID, videoFilePath);
+      String videoDownloadURL = await uploadCompressedVideo(videoID, videoFilePath);  // Stores download URL
+    
+      // 1) Upload Thumbnail To Firebase Storage
+      String thumbnailDownloadURL = await uploadThumbnailImage(videoID, videoFilePath);  // Stores download URL
+    
+      // 3) Save video info to Firestore Database
     } catch (errorMsg) {
       Get.snackbar(
         'Video Upload Unsuccessful', 
