@@ -3,6 +3,7 @@ class Video {
   String? userName;
   String? videoID;
   int? totalComments;
+  int? totalShares;
   List? likesList;
   String? artistSongName;
   String? descriptionTags;
