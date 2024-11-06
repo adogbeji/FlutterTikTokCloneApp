@@ -1,4 +1,18 @@
 class Video {
+  Video({
+    this.userID,
+    this.userName,
+    this.videoID,
+    this.totalComments,
+    this.totalShares,
+    this.likesList,
+    this.artistSongName,
+    this.descriptionTags,
+    this.videoUrl,
+    this.thumbnailUrl,
+    this.publishedDateTime,
+  });
+
   String? userID;
   String? userName;
   String? videoID;
