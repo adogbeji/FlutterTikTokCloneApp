@@ -24,4 +24,20 @@ class Video {
   String? videoUrl;
   String? thumbnailUrl;
   int? publishedDateTime;
+
+
+  // Converts data to JSON
+  Map<String, dynamic> toJson() => {
+    'userID': userID,
+    'userName': userName,
+    'videoID': videoID,
+    'totalComments': totalComments,
+    'totalShares': totalShares,
+    'likesList': likesList,
+    'artistSongName': artistSongName,
+    'descriptionTags': descriptionTags,
+    'videoUrl': videoUrl,
+    'thumbnailUrl': thumbnailUrl,
+    'publishedDateTime': publishedDateTime,
+  };
 }
