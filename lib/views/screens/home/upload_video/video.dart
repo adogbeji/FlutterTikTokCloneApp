@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Video {
   Video({
     this.userID,
@@ -40,4 +42,8 @@ class Video {
     'thumbnailUrl': thumbnailUrl,
     'publishedDateTime': publishedDateTime,
   };
+
+  static Video fromDocumentSnapshot(DocumentSnapshot snapshot) {
+    snapshot.data() as Map<String, dynamic>;
+  }
 }
