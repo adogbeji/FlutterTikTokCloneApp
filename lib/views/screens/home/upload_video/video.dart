@@ -44,6 +44,10 @@ class Video {
   };
 
   static Video fromDocumentSnapshot(DocumentSnapshot snapshot) {
-    snapshot.data() as Map<String, dynamic>;
+    var docSnapsot = snapshot.data() as Map<String, dynamic>;
+
+    return Video(
+      userID: docSnapsot['userID'],
+    );
   }
 }
