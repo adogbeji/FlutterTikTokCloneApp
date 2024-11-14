@@ -48,6 +48,16 @@ class Video {
 
     return Video(
       userID: docSnapsot['userID'],
+      userName: docSnapsot['userName'],
+      videoID: docSnapsot['videoID'],
+      totalComments: docSnapsot['totalComments'],
+      totalShares: docSnapsot['totalShares'],
+      likesList: docSnapsot['likesList'],
+      artistSongName: docSnapsot['artistSongName'],
+      descriptionTags: docSnapsot['descriptionTags'],
+      videoUrl: docSnapsot['videoUrl'],
+      thumbnailUrl: docSnapsot['thumbnailUrl'],
+      publishedDateTime: docSnapsot['publishedDateTime'],
     );
   }
 }
