@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tiktok_clone/views/screens/home/upload_video/video.dart';
 import 'package:video_compress/video_compress.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -57,6 +58,7 @@ class UploadController extends GetxController {
       String thumbnailDownloadURL = await uploadThumbnailImage(videoID, videoFilePath);  // Stores download URL
     
       // 3) Save video info to Firestore Database
+      Video videoObect = Video();
     } catch (errorMsg) {
       Get.snackbar(
         'Video Upload Unsuccessful', 
