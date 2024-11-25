@@ -67,12 +67,16 @@ class UploadController extends GetxController {
       Video videoObect = Video(
         userID: FirebaseAuth.instance.currentUser!.uid,
         userName: (userDocumentSnapshot.data() as Map<String, dynamic>)['name'],
+        userProfileImage: (userDocumentSnapshot.data() as Map<String, dynamic>)['image'],
         videoID: videoID,
         totalComments: 0,
         totalShares: 0,
         likesList: [],
         artistSongName: artistSongName,
         descriptionTags: descriptionTags,
+        videoUrl: videoDownloadURL,
+        thumbnailUrl: thumbnailDownloadURL,
+        publishedDateTime: DateTime.now().millisecondsSinceEpoch,
       );
     } catch (errorMsg) {
       Get.snackbar(

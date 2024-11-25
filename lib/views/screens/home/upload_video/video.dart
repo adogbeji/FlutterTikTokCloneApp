@@ -4,6 +4,7 @@ class Video {
   Video({
     this.userID,
     this.userName,
+    this.userProfileImage,
     this.videoID,
     this.totalComments,
     this.totalShares,
@@ -17,6 +18,7 @@ class Video {
 
   String? userID;
   String? userName;
+  String? userProfileImage;
   String? videoID;
   int? totalComments;
   int? totalShares;
@@ -49,6 +51,7 @@ class Video {
     return Video(
       userID: docSnapsot['userID'],
       userName: docSnapsot['userName'],
+      userProfileImage: docSnapsot['userProfileImage'],
       videoID: docSnapsot['videoID'],
       totalComments: docSnapsot['totalComments'],
       totalShares: docSnapsot['totalShares'],
