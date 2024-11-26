@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tiktok_clone/views/screens/home/home_screen.dart';
 import 'package:tiktok_clone/views/screens/home/upload_video/video.dart';
 import 'package:video_compress/video_compress.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -78,6 +79,11 @@ class UploadController extends GetxController {
         thumbnailUrl: thumbnailDownloadURL,
         publishedDateTime: DateTime.now().millisecondsSinceEpoch,
       );
+
+      // Saves information to Firestore Database
+      await FirebaseFirestore.instance.collection('videos').doc(videoID).set(videoObect.toJson());
+
+      Get.to(const HomeScreen());
     } catch (errorMsg) {
       Get.snackbar(
         'Video Upload Unsuccessful', 
