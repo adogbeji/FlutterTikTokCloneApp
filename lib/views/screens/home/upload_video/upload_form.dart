@@ -114,6 +114,9 @@ class _UploadFormState extends State<UploadForm> {
                 ),  
                 child: InkWell(
                   onTap: () {
+                    if (artistSongTextEditingController.text.isNotEmpty 
+                          && descriptionTagsTextEditingController.text.isNotEmpty) {}
+
                     setState(() {
                       showProgressBar = true;
                     });
