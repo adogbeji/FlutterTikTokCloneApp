@@ -113,7 +113,11 @@ class _UploadFormState extends State<UploadForm> {
                   ),
                 ),  
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    setState(() {
+                      showProgressBar = true;
+                    });
+                  },
                   child: const Center(
                     child: Text('Upload Now', style: TextStyle(
                       fontSize: 20,

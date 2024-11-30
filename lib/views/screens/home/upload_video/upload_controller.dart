@@ -84,6 +84,7 @@ class UploadController extends GetxController {
       await FirebaseFirestore.instance.collection('videos').doc(videoID).set(videoObect.toJson());
 
       Get.to(const HomeScreen());
+      Get.snackbar('New Video', 'Successfully uploaded your new video!');
     } catch (errorMsg) {
       Get.snackbar(
         'Video Upload Unsuccessful', 
