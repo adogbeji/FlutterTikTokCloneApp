@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 
 import 'package:tiktok_clone/models/utils/global.dart';
+import 'package:tiktok_clone/views/screens/home/upload_video/upload_controller.dart';
 import 'package:tiktok_clone/views/widgets/input_text_widget.dart';
 
 import 'package:video_player/video_player.dart';
@@ -20,6 +22,7 @@ class UploadForm extends StatefulWidget {
 }
 
 class _UploadFormState extends State<UploadForm> {
+  UploadController uploadVideoController = Get.put(UploadController()); 
   VideoPlayerController? playerController;
   TextEditingController artistSongTextEditingController = TextEditingController();
   TextEditingController descriptionTagsTextEditingController = TextEditingController();
