@@ -118,11 +118,22 @@ class _UploadFormState extends State<UploadForm> {
                 child: InkWell(
                   onTap: () {
                     if (artistSongTextEditingController.text.isNotEmpty 
-                          && descriptionTagsTextEditingController.text.isNotEmpty) {}
+                          && descriptionTagsTextEditingController.text.isNotEmpty) {
+                            uploadVideoController.saveVideoInfo(
+                              artistSongTextEditingController.text, 
+                              descriptionTagsTextEditingController.text, 
+                              widget.videoPath, 
+                              context
+                            );
 
-                    setState(() {
-                      showProgressBar = true;
-                    });
+                            setState(() {
+                              showProgressBar = true;
+                            });
+                          }
+
+                    // setState(() {
+                    //   showProgressBar = true;
+                    // });
                   },
                   child: const Center(
                     child: Text('Upload Now', style: TextStyle(
